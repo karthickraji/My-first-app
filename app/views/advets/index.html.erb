@@ -1,0 +1,37 @@
+<h1>Listing advets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Descripion</th>
+      <th>Price</th>
+      <th>Seller</th>
+      <th>Email</th>
+      <th>Img url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advets.each do |advet| %>
+      <tr>
+        <td><%= advet.name %></td>
+        <td><%= advet.descripion %></td>
+        <td><%= advet.price %></td>
+        <td><%= advet.seller_id %></td>
+        <td><%= advet.email %></td>
+        <td><%= advet.img_url %></td>
+        <td><%= link_to 'Show', advet %></td>
+        <td><%= link_to 'Edit', edit_advet_path(advet) %></td>
+        <td><%= link_to 'Destroy', advet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Advet', new_advet_path %>
